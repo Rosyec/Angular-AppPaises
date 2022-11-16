@@ -1,1 +1,43 @@
-<h1 class="text-center">by-pais works!</h1>
+<h1 class="text-center">Por País</h1>
+<hr>
+
+<div class="row">
+    <div class="col">
+        <div class="card">
+            <form autocomplete="off" action="" (ngSubmit)="input()">
+                <input [(ngModel)]="termino" class="form-control" type="text" name="termino" placeholder="Buscar país...">
+            </form>
+        </div>
+    </div>
+</div>
+
+<hr>
+
+<div class="alert alert-danger" *ngIf="error">No se encontró ningun termino!</div>
+
+<div class="row" *ngIf="!error">
+    <div class="col">
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Bandera</th>
+                    <th>Nombre</th>
+                    <th>Población</th>
+                    <th>Acción</th>
+                </tr>
+            </thead>
+            <tbody *ngFor="let pais of paises">
+                <tr>
+                    <td>{{ pais.altSpellings[0] }}</td>
+                    <td><img class="img-flag" [src]="pais.flags.png" alt=""></td>
+                    <td>{{ pais.name.common }}</td>
+                    <td>{{ pais.population | number }}</td>
+                    <td>
+                        <a href="" [routerLink]="['/pais', pais.cca2]" routerLinkActive="router-link-active" ><i class="bi bi-eye-fill"></i></a>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
