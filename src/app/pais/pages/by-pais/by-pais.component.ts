@@ -70,11 +70,16 @@ export class ByPaisComponent implements OnInit {
   sugerencias(sugerencia: string) {
     this.error = false;
     this.paises = [];
+    this.mostrarSugerencias = true;
     if (sugerencia != '') {
-      this.mostrarSugerencias = true;
       this.paisService.buscarPais(sugerencia).subscribe({
         next: (response) => {
           this.paisesSugeridos = response.splice(0, 6);
+        },
+        error: () => {
+            this.error = true;
+            this.paisesSugeridos = [];
+            this.mostrarSugerencias = false;
         }
       });
     }else{
