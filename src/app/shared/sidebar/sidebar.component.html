@@ -1,6 +1,6 @@
 <nav class="navbar navbar-dark bg-dark fixed-top">
     <div class="container-fluid">
-        <a class="navbar-brand" href="#"><i class="bi bi-gift mx-1"></i>{{ titulo }}</a>
+        <a class="navbar-brand" href="#"><i class="bi bi-globe-americas px-1"></i>{{ titulo }}</a>
         <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasDarkNavbar"
             aria-controls="offcanvasDarkNavbar">
             <span class="navbar-toggler-icon"></span>
@@ -23,9 +23,9 @@
                             Busquedas
                         </a>
                         <ul class="dropdown-menu dropdown-menu-dark">
-                            <li><a class="dropdown-item" routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }" href="#">Por país</a></li>
-                            <li><a class="dropdown-item" routerLink="region" routerLinkActive="active" href="#">Por región</a></li>
-                            <li><a class="dropdown-item" routerLink="capital" routerLinkActive="active" href="#">Por capital</a></li>
+                            <li><a class="dropdown-item" (click)="cerrarSidebar()" routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }" href="#">Por país</a></li>
+                            <li><a class="dropdown-item" (click)="cerrarSidebar()" routerLink="region" routerLinkActive="active" href="#">Por región</a></li>
+                            <li><a class="dropdown-item" (click)="cerrarSidebar()" routerLink="capital" routerLinkActive="active" href="#">Por capital</a></li>
                         </ul>
                     </li>
                 </ul>

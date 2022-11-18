@@ -1,0 +1,5 @@
+<form autocomplete="off" action="" (ngSubmit)="input()">
+    <div class="row">
+        <input [(ngModel)]="termino" (input)="teclaPresionada()" class="form-control" type="text" name="termino" [placeholder]="myPlaceHolder"><button (click)="botonPresionado()" *ngIf="tipoConsulta != 0" class="btn btn-primary mt-3">Consultar</button>
+    </div>
+</form>

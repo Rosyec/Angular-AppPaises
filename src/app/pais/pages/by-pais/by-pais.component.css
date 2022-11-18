@@ -1,3 +1,8 @@
-.img-flag{
-    width: 30px;
+li{
+    cursor: pointer;
+}
+
+li:hover{
+    color: blue;
+    font-size: 20px;
 }

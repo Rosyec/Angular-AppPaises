@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 
 @Component({
   selector: 'app-sidebar',
@@ -8,9 +8,15 @@ import { Component, OnInit } from '@angular/core';
 export class SidebarComponent implements OnInit {
   titulo: string = 'App Paises';
 
+  @ViewChild('btnClose') btnCerrar!: ElementRef<HTMLInputElement>;
+
   constructor() { }
 
   ngOnInit(): void {
+  }
+
+  cerrarSidebar(){
+    this.btnCerrar.nativeElement.click();
   }
 
 }
